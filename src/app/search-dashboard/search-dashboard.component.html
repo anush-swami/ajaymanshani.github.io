@@ -1,0 +1,63 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img src="assets/Images/github-icon.png" width="50" height="50" alt="git_logo">
+  </a>
+  <button type="button" class="btn btn-primary"><a (click)="goBack()">Go Back</a></button>
+</nav>
+
+<br>
+
+<div class="container">
+
+  <form>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="username" class="form-control" name="username" placeholder="enter the username and hit the search button">
+    </div>
+  </form>
+
+  <button type="button" class="btn btn-primary"><a (click)="findProfile()">Search</a></button>
+
+  <br>
+  <br>
+
+  <div *ngIf="profile">
+
+      <div class="row">
+        <div class="col-lg-4">
+    
+          <div class="card">
+            <img class="card-img-top" [src]="profile?.avatar_url" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{ profile.name }}</h5>
+              <ul class="list-group">
+                  <li class="list-group-item">
+                      Repositories
+                    <span class="badge">{{ profile.public_repos }}</span>
+                  </li>
+                  <li class="list-group-item">
+                      Followers
+                    <span class="badge">{{ profile.followers }}</span>
+                  </li>
+                  <li class="list-group-item">
+                      Following
+                    <span class="badge">{{ profile.following }}</span>
+                  </li>
+              </ul>
+            </div>
+          </div>
+    
+        </div>
+
+        <div class="col-lg-8">
+            <button type="button" class="btn btn-primary btn-lg btn-block">REPOSITORIES</button>
+        </div>
+      </div>
+    
+    </div>
+
+    <br>
+
+</div>
+
+
+

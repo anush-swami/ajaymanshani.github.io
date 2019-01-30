@@ -1,24 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
-import { AppRoutes } from "./app.routes";
+import {AppRoutes} from './app.routes';
 
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import {AppComponent} from './app.component';
+import {LoginComponent} from './login/login.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
-import { environment } from '../environments/environment';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import {environment} from '../environments/environment';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireAuthModule} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import { AuthService } from './services/auth.service';
-import { SearchService } from './services/search.service';
-import { AuthGuard } from './services/auth-guard.service';
-import { SearchDashboardComponent } from './search-dashboard/search-dashboard.component';
+import {AuthService} from './services/auth.service';
+import {SearchService} from './services/search.service';
+import {AuthGuard} from './services/auth-guard.service';
+import {SearchDashboardComponent} from './search-dashboard/search-dashboard.component';
+import {UserDataSharedService} from './services/user-data.shared.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SearchDashboardComponent } from './search-dashboard/search-dashboard.co
     HttpClientModule,
     FormsModule,
   ],
-  providers: [AuthService, AuthGuard, SearchService],
+  providers: [AuthService, AuthGuard, SearchService, UserDataSharedService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
